@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Item from './Item';
 import { Link } from 'react-router-dom';
-import useCartContext from '../Context/cardContext';
+import { useDispatch } from 'react-redux';
+import { addCart } from '../Features/cartSlice';
 
 function ItemList({ cart, updateCart }) {
     const [total, setTotal] = useState(0);
@@ -13,8 +14,8 @@ function ItemList({ cart, updateCart }) {
         setTotal(totalAmount);
     }, [cart]);
 
-    // setting data to cartContext
-    const {setCartData} = useCartContext()
+    // setting data to store
+    const dispatch = useDispatch()
     
 
     return (
@@ -41,7 +42,7 @@ function ItemList({ cart, updateCart }) {
                 <Link to="payment">
                     <button 
                     className='text-base bg-gray-400 rounded-full py-1.5 px-2.5 font-semibold  transition transform duration-300 hover:scale-105 '
-                    onClick={() => setCartData(cart)}
+                    onClick={() => dispatch(addCart(cart))}
                     >
                         Proceed To Payment
                     </button>

@@ -1,14 +1,15 @@
 import React from 'react'
 import Navbar from './Navbar'
 import { Outlet } from 'react-router-dom'
-import CartProvider from '../Context/cartProvider'
+import {Provider} from "react-redux"
+import { store } from '../App/store'
 
 function Root() {
   return (
-    <CartProvider>
+    <Provider store={store}>
       <Navbar />
       <Outlet />
-    </CartProvider>
+    </Provider>
   )
 }
 

@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import Item from './Item'
-import useCartContext from '../Context/cardContext'
-import data from '../data'
+import { useSelector } from 'react-redux'
 
 function PaymentPage() {
     const [paymentMethod, setPaymentMethod] = useState("Credit Card")
     const [total, setTotal] = useState(0)
-    const { cartData } = useCartContext()
+    const cartData = useSelector(state => state.cart)
 
     // calculate total amount 
     useEffect(() => {

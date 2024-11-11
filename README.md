@@ -1,5 +1,5 @@
 # React + Vite
 
-App link :- https://delicate-naiad-ba39bd.netlify.app/
+App link :- https://brilliant-centaur-2b3d15.netlify.app/
 
-I learned how context api works and how to use local storage.
+I learned how to use redux toolkit.
